@@ -1,6 +1,6 @@
 package mycrypt
 
-var ALF_SEM03 []rune = []rune("abcdefghijklmnopqrstuvwxyzæøå0123456789.,:; ")
+var ALF_SEM03 []rune = []rune("abcdefghijklmnopqrstuvwxyzæøå0123456789.,:; KSN") //ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ
 
 func Krypter(melding []rune, alphabet []rune, chiffer int) []rune {
 	kryptertMelding := make([]rune, len(melding))
@@ -11,6 +11,7 @@ func Krypter(melding []rune, alphabet []rune, chiffer int) []rune {
 		} else {
 			kryptertMelding[i] = alphabet[indeks+chiffer]
 		}
+
 	}
 	return kryptertMelding
 }
@@ -19,7 +20,6 @@ func sokIAlfabetet(symbol rune, alfabet []rune) int {
 	for i := 0; i < len(alfabet); i++ {
 		if symbol == alfabet[i] {
 			return i
-			break
 		}
 	}
 	return -1
